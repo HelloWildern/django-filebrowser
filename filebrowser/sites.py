@@ -330,6 +330,9 @@ class FileBrowserSite(object):
             # otherwise, one is not able to select/filter files within subfolders
             if fileobject.filetype == "Folder":
                 append = True
+                # MODIFIED: Hide folders in search
+                if do_search:
+                    append = False
             # append
             if append:
                 files.append(fileobject)
